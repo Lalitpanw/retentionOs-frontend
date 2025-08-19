@@ -2,6 +2,7 @@ import { PieChart, Pie, Cell, Tooltip, BarChart, XAxis, YAxis, Bar, ResponsiveCo
 import { useAppContext } from "../context/useContenxt";
 import { useState } from "react";
 
+
 export default function UserSegment() {
     const [selectedRiskLevel, setSelectedRiskLevel] = useState('all')
 
@@ -43,12 +44,13 @@ export default function UserSegment() {
     console.log({ dataSummary, processDataWithSelectedFilter })
 
     if (!processDataWithSelectedFilter || processDataWithSelectedFilter.length === 0) {
-        return <p style={{ color: '#d97706' }}>⚠️ Please upload data first.</p>;
+        return <p className="max-w-[1200px] m-auto py-5" style={{ color: '#d97706' }}>⚠️ Please upload data first.</p>;
     }
 
 
     return (
-        <div className="p-6 space-y-6">
+
+        <div className="max-w-[1200px] m-auto py-5 space-y-6">
             <h1 className="text-2xl font-bold">User Segments Dashboard</h1>
 
             {/* Filter Bar */}
